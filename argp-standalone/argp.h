@@ -397,15 +397,30 @@ struct argp_state
    routine returned a non-zero value, it is returned; otherwise 0 is
    returned.  This function may also call exit unless the ARGP_NO_HELP flag
    is set.  INPUT is a pointer to a value to be passed in to the parser.  */
+
+#ifdef _WIN32
+   extern error_t
+   argp_parse (const struct argp *argp, int argc, char **argv, unsigned flags,
+
+              int *end_index, void *input)__THROW;
+
+   extern error_t
+   __argp_parse (const struct argp *argp, int argc, char **argv, unsigned flags,
+
+              int *end_index, void *input)__THROW;
+#else
+
 extern error_t argp_parse (__const struct argp *__restrict __argp,
 			   int __argc, char **__restrict __argv,
 			   unsigned __flags, int *__restrict __arg_index,
 			   void *__restrict __input) __THROW;
+
 extern error_t __argp_parse (__const struct argp *__restrict __argp,
 			     int __argc, char **__restrict __argv,
 			     unsigned __flags, int *__restrict __arg_index,
 			     void *__restrict __input) __THROW;
-
+#endif
+
 /* Global variables.  */
 
 /* If defined or set by the user program to a non-zero value, then a default

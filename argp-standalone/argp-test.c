@@ -46,7 +46,7 @@ asprintf (char **result, const char *format, ...)
   {
     va_list args;
     int written;
-    
+
     p = realloc(p, size + 1);
     if (!p)
     {
@@ -55,7 +55,7 @@ asprintf (char **result, const char *format, ...)
     }
 
     p[size] = '\0';
-    
+
     va_start(args, format);
     written = vsnprintf(p, size, format, args);
     va_end(args);
@@ -247,7 +247,7 @@ main (int argc, char **argv)
 {
   struct params params;
   params.foonly = 0;
-  params.foonly_default = random ();
+  params.foonly_default = rand();
   argp_parse (&argp, argc, argv, 0, 0, &params);
   printf ("After parsing: foonly = %x\n", params.foonly);
   return 0;
