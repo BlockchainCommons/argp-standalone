@@ -5,18 +5,18 @@ AC_PREREQ(2.54)
 AC_INIT(argp-ba.c)
 AM_INIT_AUTOMAKE(argp, standalone-1.3)
 AM_CONFIG_HEADER(config.h)
-
+AC_SUBST([CFLAGS], [-std=c89])
 # GNU libc defaults to supplying the ISO C library functions only. The
 # _GNU_SOURCE define enables these extensions, in particular we want
 # errno.h to declare program_invocation_name. Enable it on all
 # systems; no problems have been reported with it so far.
 AC_GNU_SOURCE
-	
+
 # Checks for programs.
 AC_PROG_CC
 AC_PROG_MAKE_SET
 AC_PROG_RANLIB
-AM_PROG_CC_STDC
+# AM_PROG_CC_STDC
 
 if test "x$am_cv_prog_cc_stdc" = xno ; then
   AC_ERROR([the C compiler doesn't handle ANSI-C])
