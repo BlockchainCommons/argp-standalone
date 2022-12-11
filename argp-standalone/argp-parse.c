@@ -1276,14 +1276,14 @@ weak_alias (__argp_input, _argp_input)
 
 /* Defined here, in case a user is not inlining the definitions in
  * argp.h */
-void
-__argp_usage (__const struct argp_state *__state) __THROW
+__THROW void
+__argp_usage (__const struct argp_state *__state) 
 {
   __argp_state_help (__state, stderr, ARGP_HELP_STD_USAGE);
 }
 
-int
-__option_is_short (__const struct argp_option *__opt) __THROW
+__THROW int
+__option_is_short (__const struct argp_option *__opt) 
 {
   if (__opt->flags & OPTION_DOC)
     return 0;
@@ -1296,8 +1296,8 @@ __option_is_short (__const struct argp_option *__opt) __THROW
     }
 }
 
-int
-__option_is_end (__const struct argp_option *__opt) __THROW
+__THROW int
+__option_is_end (__const struct argp_option *__opt) 
 {
   return !__opt->key && !__opt->name && !__opt->doc && !__opt->group;
 }
