@@ -16,6 +16,7 @@
 
 
 %:
+	cd argp-standalone
 	dh $@
 
 
