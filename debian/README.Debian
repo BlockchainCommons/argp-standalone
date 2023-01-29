@@ -1,0 +1,14 @@
+argp-standalone for Debian
+-------------------------
+
+This is a third-party module that has been cloned to the BlockchainCommons repo for ease of installation or compilation of our own projects. The module remains under its original ownership and licensing requirements, and all changes made to this repo fall under that original license.
+
+Original Source: https://www.lysator.liu.se/~nisse/misc/argp-standalone-1.3.tar.gz) at (https://www.lysator.liu.se/~nisse/misc/).
+
+Original Source (Patch): https://raw.githubusercontent.com/Homebrew/formula-patches/b5f0ad3/argp-standalone/patch-argp-fmtstream.h as used in this Homebrew formula (https://github.com/Homebrew/homebrew-core/blob/master/Formula/argp-standalone.rb).
+
+This library is used by the following BlockchainsCommons projects:
+    - [Seedtool](https://github.com/BlockchainCommons/bc-seedtool-cli)
+    - [Bytewords-Cli](https://github.com/BlockchainCommons/bytewords-cli)
+
+ -- Shannon Appelcline <shannona@skotos.net> Thu May 14 11:42:27 2020 -1000
